@@ -1,0 +1,195 @@
+ /*popup template design*/
+    .popup-background{
+        /*position size*/
+        position: fixed;
+        z-index : 100;
+        top : 0;
+        left : 0;
+        height : 100vh;
+        width : 100vw;
+
+        /*design*/
+        background-color: gray;
+        opacity : 0.5
+    }
+
+    
+    .popup{
+        /*position size*/
+        --height : 500px;
+        --width : 500px;
+        z-index : 101;
+        position: fixed;
+        top : calc(50vh - calc(var(--height) / 2));
+        left : calc(50vw - calc(var(--width) / 2));
+        height : var(--height);
+        width : var(--width);
+
+        /*design*/
+        overflow: hidden;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+    .popup > .close-button{
+        /*position size*/
+        --size : 20px;
+        position:absolute;
+        top : calc(var(--size)/4);
+        left : calc(var(--width) - var(--size) * 5/4);/*css variables are available in children*/
+        height : var(--size);
+        width : var(--size);
+
+        /*design*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        color : gray;
+        font-size: var(--size);
+        border-radius: calc(var(--size)/5);
+    }
+    .popup > .close-button:hover{
+        /*design*/
+        background-color: red;
+        color : white;
+    }
+    .popup > .content{
+        padding: 10px;
+        text-align: center;
+    }
+    
+
+    /*hide popup*/
+    .popup-flag{
+        display:none;
+    }
+    .popup-flag:not(:checked) + .popup-background{
+        display:none;
+    }
+    .popup-flag:not(:checked) + * + .popup{
+        display:none;
+    }
+
+
+    .popup .content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;      /* 要素間の隙間（必要に応じて調整） */
+    min-height: 260px; /* モーダル高さの目安。調整可 */
+    box-sizing: border-box;
+}
+.button-area {
+    margin-top: auto;      /* 残りスペースを押し下げて下揃えにする */
+    display: flex;
+    justify-content: center; /* 水平中央揃え */
+    align-items: center;
+    padding-top: 8px;
+}
+/* ポップアップ全体 */
+.popup {
+    display: none; /* チェックボックスで表示切替 */
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* チェックが入ったら表示 */
+.popup-flag:checked ~ .popup {
+    display: flex;
+}
+
+/* モーダル本体 */
+.popup .content {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 320px; /* 必要に応じて調整 */
+    box-sizing: border-box;
+}
+
+/* 閉じるボタン（ラベル） */
+.popup .close-button {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 1.4rem;
+    line-height: 1;
+    background: transparent;
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    color: #666;
+}
+.popup .close-button:hover { color: #111; }
+
+/* フォーム内の行（ラベル + 入力） */
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.contact-form .form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+.contact-form .form-group textarea { min-height: 120px; resize: vertical; }
+
+/* ボタンエリア：下揃え・中央揃え */
+.popup .content .button-area {
+    margin-top: auto; /* 下に寄せる */
+    display: flex;
+    justify-content: center; /* 横中央 */
+    align-items: center;
+    padding-top: 8px;
+}
+
+/* 送信ボタン */
+.submit-btn {
+    padding: 0.65rem 1.2rem;
+    background: linear-gradient(90deg, #27acd9, #b4e12b);
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(39,172,217,0.18);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(39,172,217,0.22); }
+
+/* メッセージ領域（送信結果表示用） */
+#contactMessage {
+    font-size: 0.95rem;
+    color: #2b6a4a;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 460px) {
+    .popup .content { padding: 16px; min-height: 260px; }
+    .submit-btn { width: 100%; }
+}

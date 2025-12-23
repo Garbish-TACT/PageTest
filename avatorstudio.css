@@ -1,0 +1,104 @@
+.site-header {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    padding: 0;
+}
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff8800;
+    margin-left: 32px;
+}
+.header-nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header-nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.header-nav a:hover {
+    color: #ff8800;
+}
+h1{
+    font-size: 3.0rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #333;
+    margin: 0.2rem;
+    margin-top: 10rem;
+}
+
+p {
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #333;
+    margin: 0.2rem;
+}
+.btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px; /* ボタン間の隙間 */
+    margin-top: 1.0rem;
+}
+
+a.btn_10 {
+	 display: inline-flex;
+    gap: 16px; /* ボタン間の隙間を調整 */
+    justify-content: center; /* 中央揃え（必要に応じて） */
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 180px;
+    margin: 0; /* 中央揃えのためautoを0に */
+
+	padding: 1rem 4rem;
+	font-weight: bold;
+	background-image: linear-gradient(to right, #27acd9 0%, #b4e12b 100%);
+	border-radius: 100vh;
+	color: #fff;
+	border: 2px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	transition: 0.5s;
+}
+a.btn_10:hover {
+	color: #fff;
+	background-image: linear-gradient(to left, #27acd9 0%, #b4e12b 100%);
+}
+a.btn_03 {
+     display: inline-flex;
+   
+    justify-content: center; /* 中央揃え（必要に応じて） */
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 180px;
+    margin: 0; /* 中央揃えのためautoを0に */
+
+	padding: 1rem 2rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	color: #27acd9;
+	border-radius: 100vh;
+	transition: 0.5s;
+}
+a.btn_03:hover {
+	color: #fff;
+	background: #27acd9;
+}

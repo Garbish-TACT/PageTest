@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="avatorstudio.css" type="text/css">
+    <link rel="stylesheet" href="popup.css" type="text/css">
+    <title>Avatar Studio</title>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo">Avatar Studio</div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#works">実績</a></li>
+                <li><a href="#pricing">料金</a></li>
+                <li><label for="popupFlag1" style="cursor:pointer">お問い合わせ</label></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- popup template -->
+<input type="checkbox" class="popup-flag" id="popupFlag1">
+<label class="popup-background" for="popupFlag1"></label>
+<div class="popup">
+    <label class="close-button" for="popupFlag1">×</label>
+    <div class="content">
+        <h3>お問い合わせフォーム</h3>
+        <form action="https://formspree.io/f/xjkpywvv" method="POST" id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name">お名前</label>
+                <input type="text" id="name" name="お名前" required />
+            </div>
+            <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="メールアドレス" required />
+            </div>
+            <div class="form-group">
+                <label for="company">会社名 (任意)</label>
+                <input type="text" id="company" name="会社名" />
+            </div>
+            <div class="form-group">
+                <label for="message">お問い合わせ内容</label>
+                <textarea id="message" name="お問い合わせ内容" rows="5" required></textarea>
+            </div>
+            <div class="button-area">
+                <button type="submit" class="submit-btn">送信する</button>
+            </div>
+        </form>
+        <div id="contactMessage" aria-live="polite" style="margin-top:8px;"></div>
+    </div>
+</div>
+
+<main>
+    <section class="hero" style="padding:48px 16px; text-align:center;">
+        <h1>あなたの「なりたい」をアバターに。</h1>
+        <p class="lead">最新のJamstack技術で、高品質なオリジナルアバターを最速で制作します。</p>
+        <p class="lead-sub">デザインから納品まで、専門家が丁寧にサポートします。</p>
+        <div class="btn-row">
+            <a href="#services" class="btn_10">無料で相談してみる</a>
+            <a href="#works" class="btn_03">実績を見てみる</a>
+        </div>
+    </section>
+
+    <section id="services" style="padding:48px 16px; max-width:1100px; margin:0 auto;">
+        <h2>サービス</h2>
+        <div class="services-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin-top:16px;">
+            <article class="service-card" style="padding:16px; border-radius:8px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+                <h3>キャラクターデザイン</h3>
+                <p>個性を引き出すオリジナルアバターを、ラフ→本制作まで制作します。</p>
+            </article>
+            <article class="service-card" style="padding:16px; border-radius:8px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+                <h3>3Dアバター制作</h3>
+                <p>ゲーム・配信用に使える3Dモデルを最適化して納品します。</p>
+            </article>
+            <article class="service-card" style="padding:16px; border-radius:8px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+                <h3>アニメーション & レンダリング</h3>
+                <p>まばたき・リップシンクなどのモーション付け、静止画レンダリングも対応。</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="works" style="padding:48px 16px; background:#fafafa;">
+        <h2 style="max-width:1100px;margin:0 auto;">実績</h2>
+        <div class="works-grid" style="max-width:1100px;margin:16px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+            <figure style="background:#fff;border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+                <img src="work1.jpg" alt="work1" style="width:100%;border-radius:6px;">
+                <figcaption style="margin-top:8px;font-weight:600;">VTuber向けキャラクター</figcaption>
+            </figure>
+            <figure style="background:#fff;border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+                <img src="work2.jpg" alt="work2" style="width:100%;border-radius:6px;">
+                <figcaption style="margin-top:8px;font-weight:600;">3Dアバター（配信用）</figcaption>
+            </figure>
+            <figure style="background:#fff;border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+                <img src="work3.jpg" alt="work3" style="width:100%;border-radius:6px;">
+                <figcaption style="margin-top:8px;font-weight:600;">ゲーム用アイコン・素材</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="pricing" style="padding:48px 16px; max-width:1100px; margin:0 auto;">
+        <h2>料金プラン</h2>
+        <div class="pricing-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-top:16px;">
+            <div class="plan" style="padding:20px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04);text-align:center;">
+                <h3>ライト</h3>
+                <p style="font-size:1.6rem;font-weight:700;margin:8px 0;">¥10,000〜</p>
+                <p>2Dイラスト1体 / 簡易修正1回</p>
+                <p style="margin-top:12px;"><a href="#popupFlag1" style="text-decoration:none;"><label for="popupFlag1" class="btn_03" style="cursor:pointer">相談する</label></a></p>
+            </div>
+            <div class="plan" style="padding:20px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04);text-align:center;">
+                <h3>スタンダード</h3>
+                <p style="font-size:1.6rem;font-weight:700;margin:8px 0;">¥30,000〜</p>
+                <p>2D表情差分 / 納品データ付き</p>
+                <p style="margin-top:12px;"><a href="#popupFlag1" style="text-decoration:none;"><label for="popupFlag1" class="btn_10" style="cursor:pointer">相談する</label></a></p>
+            </div>
+            <div class="plan" style="padding:20px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04);text-align:center;">
+                <h3>プレミアム</h3>
+                <p style="font-size:1.6rem;font-weight:700;margin:8px 0;">¥80,000〜</p>
+                <p>3Dモデリング / リギング / カスタムアニメーション</p>
+                <p style="margin-top:12px;"><a href="#popupFlag1" style="text-decoration:none;"><label for="popupFlag1" class="btn_10" style="cursor:pointer">相談する</label></a></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+  // フォーム送信ハンドラ（idを contactForm に合わせています）
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const messageEl = document.getElementById('contactMessage');
+      if (messageEl) messageEl.textContent = '送信中…';
+      fetch(this.action, {
+        method: this.method,
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          if (messageEl) messageEl.textContent = 'お問い合わせが完了しました。ありがとうございます！';
+          this.reset();
+          // モーダルを自動で閉じる
+          document.getElementById('popupFlag1').checked = false;
+        } else {
+          if (messageEl) messageEl.textContent = '送信に失敗しました。再度お試しください。';
+        }
+      }).catch(() => {
+        if (messageEl) messageEl.textContent = '送信に失敗しました。ネットワークを確認してください。';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
